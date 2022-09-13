@@ -23,11 +23,11 @@ map('n','<C-s>',':w<CR>')     -- save buffer
 map('i','<C-s>',':w<CR>')     -- save buffer
 
 -- Buffer swiching
---map('n','tt',':bnext<CR>')      -- to next buffer 
+--map('n','tt',':bnext<CR>')      -- to next buffer
 --map('n','Tt',':bprevious<CR>')  -- to previous buffer
-map('n','<Tab>',':bnext<CR>')      -- to next buffer 
+map('n','<Tab>',':bnext<CR>')      -- to next buffer
 map('n','<S-Tab>',':bprevious<CR>')  -- to previous buffer
-map('n','<C-h>',':bp<CR>')      -- to previous buffer 
+map('n','<C-h>',':bp<CR>')      -- to previous buffer
 map('n','<C-l>',':bn<CR>')      -- to next buffer
 --map('','','<CR>')
 

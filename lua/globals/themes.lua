@@ -6,4 +6,4 @@ vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 
 -- Load nvim color scheme:
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme everforest]]
