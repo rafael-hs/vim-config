@@ -13,9 +13,25 @@ vim.opt.background = 'dark'
 
 -- Load nvim color scheme:
 
--- Everforest config
+
+  -- Moonfly config
+--vim.cmd [[colorscheme moonfly]]
+
+
+  -- Nightfly config
+--vim.cmd[[
+--colorscheme nightfly
+--]]
+
+  -- Embark config
 vim.cmd[[
-let g:everforest_background = 'hard'
-let g:everforest_better_performance = 1
-colorscheme everforest
+colorscheme embark
 ]]
+
+
+-- Everforest config
+--vim.cmd[[
+--let g:everforest_background = 'hard'
+--let g:everforest_better_performance = 1
+--colorscheme everforest
+--]]

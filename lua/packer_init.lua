@@ -39,6 +39,9 @@ return packer.startup(function(use)
   ---THEMES------THEMES------THEMES---
   use 'sainnhe/everforest'
   use 'folke/tokyonight.nvim'
+  use 'embark-theme/vim'
+  use 'bluz71/vim-moonfly-colors'
+  use 'bluz71/vim-nightfly-guicolors'
 
   -- Dashboard
   use 'glepnir/dashboard-nvim'
@@ -76,9 +79,12 @@ return packer.startup(function(use)
   -- Tests
   use 'vim-test/vim-test'
 
+  -- Snippets
+  use 'SirVer/ultisnips' -- integration snippets
+  use 'honza/vim-snippets' -- snippets for differents languages
+
   -- Elixir
-  --use 'elixir-editors/vim-elixir'
-  --use 'slashmili/alchemist.vim'
+  use 'elixir-editors/vim-elixir'
 
   -- Search and replace in project
   use 'nvim-pack/nvim-spectre'
@@ -92,6 +98,9 @@ return packer.startup(function(use)
 
   -- Utility
   use 'tpope/vim-surround' -- delete, change and add such surroundings (parenthesis, breckets, quotes, tags)
+  use 'mhinz/vim-signify'  -- show differences with style
+  use 'tpope/vim-rhubarb'  --If fugitive.vim is the Git, rhubarb.vim is the Hub. Here's the full list of features:
+  use 'junegunn/gv.vim' -- A git commit browser.
   use 'tpope/vim-fugitive' -- Git plugin on vim
   use 'mbbill/undotree' -- visualizes undo history and makes it easier to browse and swtich between
 

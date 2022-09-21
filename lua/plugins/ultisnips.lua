@@ -1,1 +1,1 @@
---vim.g.UltiSnipsExpandTrigger= '<C-~><CR>'
+vim.g.UltiSnipsExpandTrigger= '<C-~><CR>'

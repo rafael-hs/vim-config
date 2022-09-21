@@ -5,6 +5,7 @@ vim.cmd[[
 syntax enable " enable syntax highglighting
 syntax on " turn on syntax highlighting
 filetype plugin indent on
+set noshowmode
 ]]
 
 -- Global Settings --

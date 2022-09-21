@@ -21,7 +21,7 @@ require('plugins.lualine')
 require('plugins.nerdtree')
 require('plugins.rainbow')
 require('plugins.spectre')
---require('plugins.ultisnips')
+require('plugins.ultisnips')
 require('plugins.vim_test')
 require('plugins.undotree')
 
