@@ -1,5 +1,8 @@
---local db = require('dashboard')
---local home = os.getenv('HOME')
+local M = {}
+local home = os.getenv('HOME')
+local dot_path = home .. '/.config/nvim'
+local projects_path = home .. '/code/work/'
+
 local girl = {
     '',
     '⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕',
@@ -56,62 +59,56 @@ local neovim = {
  ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 }
 
-local g = vim.g
-g.dashboard_default_executive = 'telescope'
+function M.setup()
+  local status_ok, alpha = pcall(require, "alpha")
+  if not status_ok then
+    return
+  end
 
---db.setup({
-    --theme = 'doom',
-    --config = {
-       --header = {
-       --},
-       --center = {
-          --},
-       --footer = {}
-    --}
-  --})
+  local dashboard = require "alpha.themes.dashboard"
+  dashboard.section.header.val = girl
+  dashboard.section.buttons.val = {
+    dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
+    dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+    dashboard.button("t", "  Find word", ":Telescope live_grep <CR>"),
+    dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("c", "  Configuration", ":e $MYVIMRC<CR>"),
+    dashboard.button("P", "  Open Personal dotfiles", ":Telescope file_browser path=" .. dot_path .. "<CR>" ),
+    dashboard.button("p", "  Find project", ":Telescope file_browser path=" .. projects_path .. "<CR>"),
+    dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+  }
 
-          --{icon = '  ',
-           --desc = 'Recently opened files                   ',
-           --action =  'Telescope oldfiles',
-           --shortcut = '   NONE'},
-          --{icon = '  ',
-           --desc = 'Find  File                              ',
-           --action = 'Telescope find_files',
-           --shortcut = ' CTRL P'},
-          --{icon = '  ',
-           --desc ='File Browser                            ',
-           --action =  'Telescope file_browser',
-           --shortcut = '   NONE'},
-          --{icon = '  ',
-           --desc = 'Find  word                              ',
-           --action = 'Telescope live_grep',
-           --shortcut = ' CTRL F'},
-          --{icon = '  ',
-           --desc = 'Open Personal dotfiles                  ',
-           --action = 'Telescope file_browser path=' .. home .. '/.config/nvim',
-           --shortcut = '   NONE'},
+  local function footer()
+    -- Number of plugins
+    local total_plugins = #vim.tbl_keys(packer_plugins)
+    local datetime = os.date "%d-%m-%Y %H:%M:%S"
+    local plugins_text = "   "
+      .. total_plugins
+      .. " plugins"
+      .. "   v"
+      .. vim.version().major
+      .. "."
+      .. vim.version().minor
+      .. "."
+      .. vim.version().patch
+      .. "   "
+      .. datetime
 
---db.custom_header = duck
---db.header_pad = 7
---db.custom_center = {
-    --{icon = '  ',
-    --desc = 'Recently opened files                   ',
-    --action =  'Telescope oldfiles',
-    --shortcut = '   NONE'},
-    --{icon = '  ',
-    --desc = 'Find  File                              ',
-    --action = 'Telescope find_files',
-    --shortcut = ' CTRL P'},
-    --{icon = '  ',
-    --desc ='File Browser                            ',
-    --action =  'Telescope file_browser',
-    --shortcut = '   NONE'},
-    --{icon = '  ',
-    --desc = 'Find  word                              ',
-    --action = 'Telescope live_grep',
-    --shortcut = ' CTRL F'},
-    --{icon = '  ',
-    --desc = 'Open Personal dotfiles                  ',
-    --action = 'Telescope file_browser path=' .. home .. '/.config/nvim',
-    --shortcut = '   NONE'},
-  --}
+    -- Quote
+    local fortune = require "alpha.fortune"
+    local quote = table.concat(fortune(), "\n")
+
+    return plugins_text .. "\n" .. quote
+  end
+
+  dashboard.section.footer.val = footer()
+
+  dashboard.section.footer.opts.hl = "Type"
+  dashboard.section.header.opts.hl = "Include"
+  dashboard.section.buttons.opts.hl = "Keyword"
+
+  dashboard.opts.opts.noautocmd = true
+  alpha.setup(dashboard.opts)
+end
+
+return M

@@ -1,7 +1,6 @@
 -----------------------------------------------------------
 -- Plugin manager configuration file
 -----------------------------------------------------------
-
 -- Automatically install packer
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -37,14 +36,23 @@ return packer.startup(function(use)
   -- Add you plugins here:
   --
   ---THEMES------THEMES------THEMES---
-  use 'sainnhe/everforest'
-  use 'folke/tokyonight.nvim'
-  use 'embark-theme/vim'
-  use 'bluz71/vim-moonfly-colors'
-  use 'bluz71/vim-nightfly-guicolors'
+  --use 'sainnhe/everforest'
+  --use 'folke/tokyonight.nvim'
+  --use 'embark-theme/vim'
+  --use 'bluz71/vim-moonfly-colors'
+  --use 'bluz71/vim-nightfly-guicolors'
+  --use 'rebelot/kanagawa.nvim'
+  use 'frenzyexists/aquarium-vim'
 
   -- Dashboard
-  use 'glepnir/dashboard-nvim'
+  --use 'glepnir/dashboard-nvim'
+  --use 'mhinz/vim-startify'
+  use {
+   "goolord/alpha-nvim",
+   config = function()
+      require("plugins.alpha").setup()
+   end,
+  }
 
   -- NERDTree Area
   use 'preservim/nerdtree'			-- nerdtree - file system explorer
@@ -74,7 +82,7 @@ return packer.startup(function(use)
   use 'sheerun/vim-polyglot'
 
   -- Color parentheses
-  use 'luochen1990/rainbow'
+  --use 'luochen1990/rainbow'
 
   -- Tests
   use 'vim-test/vim-test'
@@ -103,6 +111,9 @@ return packer.startup(function(use)
   use 'junegunn/gv.vim' -- A git commit browser.
   use 'tpope/vim-fugitive' -- Git plugin on vim
   use 'mbbill/undotree' -- visualizes undo history and makes it easier to browse and swtich between
+
+  -- Conceal Vim
+  use 'khzaw/vim-conceal'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

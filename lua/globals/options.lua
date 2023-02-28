@@ -42,3 +42,4 @@ g.smartcase = true     -- set to be case sensitive when there is capital letter,
 g.incserach = true -- set search to be case insensitive
 g.hidden = true -- hide buffers
 g.shortmess = 'c' -- to hide user defined completion message COC plugin
+set.conceallevel = 3

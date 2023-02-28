@@ -1,5 +1,5 @@
 -----------------------------------------------------------
--- Color schemes configuration file -----------------------
+----------- Color schemes configuration file --------------
 -----------------------------------------------------------
 
 --vim.opt.termguicolors = true
@@ -13,21 +13,19 @@ vim.opt.background = 'dark'
 
 -- Load nvim color scheme:
 
+-- Moonfly config
+--vim.cmd[[colorscheme moonfly]]
 
-  -- Moonfly config
---vim.cmd [[colorscheme moonfly]]
 
-
-  -- Nightfly config
+-- Nightfly config
 --vim.cmd[[
 --colorscheme nightfly
 --]]
 
   -- Embark config
-vim.cmd[[
-colorscheme embark
-]]
-
+--vim.cmd[[
+--colorscheme embark
+--]]
 
 -- Everforest config
 --vim.cmd[[
@@ -35,3 +33,13 @@ colorscheme embark
 --let g:everforest_better_performance = 1
 --colorscheme everforest
 --]]
+
+-- Kanagawa config
+--vim.cmd[[
+--colorscheme kanagawa
+--]]
+
+-- Aquarium
+vim.cmd[[
+  colorscheme aquarium
+]]

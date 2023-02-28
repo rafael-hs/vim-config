@@ -11,7 +11,7 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map('n', '<C-b>', ':call ToggleTree()<CR>')
+map('n', '<C-b>', ':silent! :call ToggleTree()<CR>')
 map('n', '++', '<plug>NERDCommenterToggle')
 map('v', '++', '<plug>NERDCommenterToggle')
 
@@ -60,12 +60,17 @@ augroup end
 -- NERDTree
 o.signcolumn = 'yes'
 g.NERDTreeShowHidden = true -- this setting tells vim whether to display hidden files by default.
-g.NERDTreeWinPos     = 'right' -- open nerd tree on right
-g.NERDTreeWinSize    = 40 -- size of nerdtree buffer
+g.NERDTreeWinPos     = 'left' -- open nerd tree on right
+g.NERDTreeWinSize    = 45 -- size of nerdtree buffer
 g.NERDTreeIgnore     = {'^node_modules$'} -- ignore node_modules (increase load speed)
 g.NERDTreeStatusline = ''
 g.NERDTreeHighlightFolders = true
-g.NERDTreeHighlightFoldersFullName = true
+g.NERDTreeHighlightFoldersFullName = 1
+g.NERDTreeDirArrowExpandable = ''
+g.NERDTreeDirArrowCollapsible = ''
+--g.NERDTreeDirArrowExpandable = '➫'
+--g.NERDTreeDirArrowCollapsible = '➘'
+g.webdevicons_conceal_nerdtree_brackets = 1
 
 -- NERDTree Git Plugin
 g.NERDTreeGitStatusIndicatorMapCustom = {
@@ -84,11 +89,10 @@ g.NERDTreeGitStatusIndicatorMapCustom = {
 -- NERDTree Icons
 g.webdevicons_enable = 1
 g.WebDevIconsUnicodeDecorateFolderNodes = 1
+g.WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+g.WebDevIconsNerdTreeAfterGlyphPadding = ' '
+g.WebDevIconsNerdTreeBeforeGlyphPadding = ' '
+
 g.DevIconsEnableFoldersOpenClose = 1
 g.DevIconsEnableFolderExtensionPatternMatching = 1
 g.DevIconsDefaultFolderOpenSymbol = ''
-g.WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
-g.NERDTreeDirArrowExpandable = ''
-g.NERDTreeDirArrowCollapsible = ''
---g.NERDTreeDirArrowExpandable = '➫'
---g.NERDTreeDirArrowCollapsible = '➘'
