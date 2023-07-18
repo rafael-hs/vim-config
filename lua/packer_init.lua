@@ -36,13 +36,20 @@ return packer.startup(function(use)
   -- Add you plugins here:
   --
   ---THEMES------THEMES------THEMES---
-  --use 'sainnhe/everforest'
   --use 'folke/tokyonight.nvim'
   --use 'embark-theme/vim'
   --use 'bluz71/vim-moonfly-colors'
   --use 'bluz71/vim-nightfly-guicolors'
   --use 'rebelot/kanagawa.nvim'
-  use 'frenzyexists/aquarium-vim'
+  use 'sainnhe/everforest'
+  --use 'frenzyexists/aquarium-vim'
+  --use 'catppuccin/nvim'
+  --use 'embark-theme/vim'
+  --use 'AlexvZyl/nordic.nvim'
+  --use 'cseelus/vim-colors-lucid'
+  --use 'aswathkk/DarkScene.vim'
+  --use 'crispybaccoon/dawn.vim'
+  --use 'Domeee/mosel.nvim'
 
   -- Dashboard
   --use 'glepnir/dashboard-nvim'
@@ -113,7 +120,7 @@ return packer.startup(function(use)
   use 'mbbill/undotree' -- visualizes undo history and makes it easier to browse and swtich between
 
   -- Conceal Vim
-  use 'khzaw/vim-conceal'
+  --use 'khzaw/vim-conceal'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
