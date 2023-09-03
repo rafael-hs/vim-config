@@ -103,16 +103,16 @@ vim.opt.background = 'dark'
 --]]
 
   -- Embark config
---vim.cmd[[
---colorscheme embark
---]]
+vim.cmd[[
+colorscheme embark
+]]
 
 -- Everforest config
-vim.cmd[[
-let g:everforest_background = 'hard'
-let g:everforest_better_performance = 1
-colorscheme everforest
-]]
+--vim.cmd[[
+--let g:everforest_background = 'hard'
+--let g:everforest_better_performance = 1
+--colorscheme everforest
+--]]
 
 -- Kanagawa config
 --vim.cmd[[

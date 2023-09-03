@@ -20,6 +20,7 @@ g.coc_global_extensions = {
   'coc-eslint',
   'coc-elixir',
   'coc-lua',
+  'coc-omnisharp',
 }
 
 map('n','<leader>gd','<Plug>(coc-definition)')
