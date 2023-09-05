@@ -37,13 +37,14 @@ return packer.startup(function(use)
   --
   ---THEMES------THEMES------THEMES---
   --use 'folke/tokyonight.nvim'
-  use 'embark-theme/vim'
+  --use 'embark-theme/vim'
+  use "lunarvim/horizon.nvim"
   --use 'bluz71/vim-moonfly-colors'
   --use 'bluz71/vim-nightfly-guicolors'
   --use 'rebelot/kanagawa.nvim'
-  use 'sainnhe/everforest'
+  --use 'sainnhe/everforest'
   --use 'frenzyexists/aquarium-vim'
-  use 'catppuccin/nvim'
+  --use 'catppuccin/nvim'
   --use 'embark-theme/vim'
   --use 'AlexvZyl/nordic.nvim'
   --use 'cseelus/vim-colors-lucid'

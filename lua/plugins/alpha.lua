@@ -66,7 +66,7 @@ function M.setup()
   end
 
   local dashboard = require "alpha.themes.dashboard"
-  dashboard.section.header.val = girl
+  dashboard.section.header.val = duck
   dashboard.section.buttons.val = {
     dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
     dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),

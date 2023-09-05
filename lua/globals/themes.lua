@@ -103,9 +103,9 @@ vim.opt.background = 'dark'
 --]]
 
   -- Embark config
-vim.cmd[[
-colorscheme embark
-]]
+--vim.cmd[[
+--colorscheme embark
+--]]
 
 -- Everforest config
 --vim.cmd[[
@@ -148,3 +148,8 @@ colorscheme embark
 --vim.cmd[[
 --colorscheme mosel
 --]]
+
+-- Horizon
+ vim.cmd[[
+ colorscheme horizon
+ ]]
