@@ -58,7 +58,7 @@ local bubbles_theme = {
 
 require('lualine').setup {
   options = {
-    theme = bubbles_theme,
+    theme = 'nordic',
     component_separators = '|',
     section_separators = { left = '', right = '' },
   },

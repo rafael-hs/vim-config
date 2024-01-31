@@ -37,8 +37,9 @@ return packer.startup(function(use)
   --
   ---THEMES------THEMES------THEMES---
   --use 'folke/tokyonight.nvim'
-  --use 'embark-theme/vim'
-  use "lunarvim/horizon.nvim"
+  use 'embark-theme/vim'
+  use 'AlexvZyl/nordic.nvim'
+  --use "lunarvim/horizon.nvim"
   --use 'bluz71/vim-moonfly-colors'
   --use 'bluz71/vim-nightfly-guicolors'
   --use 'rebelot/kanagawa.nvim'
@@ -109,7 +110,7 @@ return packer.startup(function(use)
   use 'nvim-pack/nvim-spectre'
   use 'nvim-lua/plenary.nvim'
   use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  'nvim-telescope/telescope.nvim', tag = '0.1.4',
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
   }
