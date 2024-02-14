@@ -45,7 +45,7 @@ return packer.startup(function(use)
   --use 'rebelot/kanagawa.nvim'
   --use 'sainnhe/everforest'
   --use 'frenzyexists/aquarium-vim'
-  --use 'catppuccin/nvim'
+  use 'catppuccin/nvim'
   --use 'embark-theme/vim'
   --use 'AlexvZyl/nordic.nvim'
   --use 'cseelus/vim-colors-lucid'
@@ -123,6 +123,9 @@ return packer.startup(function(use)
   use 'junegunn/gv.vim' -- A git commit browser.
   use 'tpope/vim-fugitive' -- Git plugin on vim
   use 'mbbill/undotree' -- visualizes undo history and makes it easier to browse and swtich between
+
+  -- gitblame on lualine
+  use 'f-person/git-blame.nvim'
 
   -- Conceal Vim
   --use 'khzaw/vim-conceal'
