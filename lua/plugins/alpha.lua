@@ -59,14 +59,29 @@ local neovim = {
  ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 }
 
+local logos = {
+   neovim,
+   duck,
+   girl
+  }
+
 function M.setup()
   local status_ok, alpha = pcall(require, "alpha")
   if not status_ok then
     return
   end
 
+  math.randomseed(os.time())
+  local logo = logos[math.random(#logos)]
+
+  local function pick_color()
+    local colors = { "String", "Identifier", "Keyword", "Number" }
+    return colors[math.random(#colors)]
+  end
+
   local dashboard = require "alpha.themes.dashboard"
-  dashboard.section.header.val = duck
+  dashboard.section.header.val = logo
+  dashboard.section.header.opts.hl = pick_color()
   dashboard.section.buttons.val = {
     dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
     dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),

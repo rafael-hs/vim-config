@@ -10,6 +10,7 @@ end
 map('n', '<C-p>', ':Telescope find_files<CR>')
 map('n', '<C-g>', ':Telescope git_files<CR>')
 map('n', '<C-f>', ':Telescope live_grep<CR>')
+map('n', '<leader>gs', ':Telescope git_status<CR>')
 
 -- To get telescope-file-browser loaded and working with telescope,
 -- you need to call load_extension, somewhere after setup function:

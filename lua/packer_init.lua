@@ -37,7 +37,7 @@ return packer.startup(function(use)
   --
   ---THEMES------THEMES------THEMES---
   --use 'folke/tokyonight.nvim'
-  use 'embark-theme/vim'
+  --use 'embark-theme/vim'
   use 'AlexvZyl/nordic.nvim'
   --use "lunarvim/horizon.nvim"
   --use 'bluz71/vim-moonfly-colors'
@@ -52,6 +52,7 @@ return packer.startup(function(use)
   --use 'aswathkk/DarkScene.vim'
   --use 'crispybaccoon/dawn.vim'
   --use 'Domeee/mosel.nvim'
+  use 'comfysage/evergarden'
 
   -- Dashboard
   --use 'glepnir/dashboard-nvim'
@@ -64,11 +65,14 @@ return packer.startup(function(use)
   }
 
   -- NERDTree Area
-  use 'preservim/nerdtree'			-- nerdtree - file system explorer
-  use 'ryanoasis/vim-devicons' 			-- Vim devicons - Icons to nerdtree
+  --use 'preservim/nerdtree'			-- nerdtree - file system explorer
+  --use 'ryanoasis/vim-devicons' 			-- Vim devicons - Icons to nerdtree
   use 'preservim/nerdcommenter'                 -- Commenter
-  use 'tiagofumo/vim-nerdtree-syntax-highlight' -- Colors to NERDTree
-  use 'Xuyuanp/nerdtree-git-plugin' 		-- Support to GIT into NERDTree
+  --use 'tiagofumo/vim-nerdtree-syntax-highlight' -- Colors to NERDTree
+  --use 'Xuyuanp/nerdtree-git-plugin' 		-- Support to GIT into NERDTree
+
+  -- chadtree Directory
+  use {'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps'}
 
   -- Lualine is a modify below line
   use {
@@ -79,7 +83,7 @@ return packer.startup(function(use)
   --use 'vim-airline/vim-airline-themes'
 
   -- customize a buffer section
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
   -- Searching section
   use 'junegunn/fzf'
@@ -107,8 +111,8 @@ return packer.startup(function(use)
   --use 'OmniSharp/omnisharp-vim'
 
   -- Search and replace in project
-  use 'nvim-pack/nvim-spectre'
   use 'nvim-lua/plenary.nvim'
+  use 'nvim-pack/nvim-spectre'
   use {
   'nvim-telescope/telescope.nvim', tag = '0.1.4',
 -- or                            , branch = '0.1.x',

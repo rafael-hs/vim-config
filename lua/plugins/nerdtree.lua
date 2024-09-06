@@ -60,8 +60,8 @@ augroup end
 -- NERDTree
 o.signcolumn = 'yes'
 g.NERDTreeShowHidden = true -- this setting tells vim whether to display hidden files by default.
-g.NERDTreeWinPos     = 'left' -- open nerd tree on right
-g.NERDTreeWinSize    = 45 -- size of nerdtree buffer
+g.NERDTreeWinPos     = 'right' -- open nerd tree on right
+g.NERDTreeWinSize    = 50 -- size of nerdtree buffer
 g.NERDTreeIgnore     = {'^node_modules$'} -- ignore node_modules (increase load speed)
 g.NERDTreeStatusline = ''
 g.NERDTreeHighlightFolders = true
