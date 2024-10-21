@@ -1,6 +1,0 @@
---vim.g.rainbow_active = true
---vim.cmd[[
---let g:rainbow_load_separately = [
-    --\ { 'nerdtree': 0 },
-    --\ ]
---]]

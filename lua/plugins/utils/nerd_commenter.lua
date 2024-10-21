@@ -6,6 +6,5 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map('n', '<C-b>', ':silent! :call ToggleTree()<CR>')
 map('n', '++', '<plug>NERDCommenterToggle')
 map('v', '++', '<plug>NERDCommenterToggle')

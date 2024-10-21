@@ -1,8 +1,8 @@
 local g = vim.g       -- Global variables
 local set = vim.opt   -- Set options (global/buffer/windows-scoped)
 
+--syntax enable " enable syntax highglighting
 vim.cmd[[
-syntax enable " enable syntax highglighting
 syntax on " turn on syntax highlighting
 filetype plugin indent on
 set noshowmode
@@ -15,7 +15,7 @@ set.cursorline = true -- highlight current line
 set.confirm = true -- asking if u wish to save the current file
 set.title = true -- show the tittle
 set.showcmd = true -- show cmd below
-set.cmdheight = 1 -- height cmd below
+set.cmdheight = 3 -- height cmd below
 
 -- Mouse --
 set.mouse = 'a' -- enable mouse visual mode

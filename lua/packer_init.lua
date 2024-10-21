@@ -33,9 +33,7 @@ end
 
 -- Install plugins
 return packer.startup(function(use)
-  -- Add you plugins here:
-  --
-  ---THEMES------THEMES------THEMES---
+  ---------  THEMES  ---------
   --use 'folke/tokyonight.nvim'
   --use 'embark-theme/vim'
   use 'AlexvZyl/nordic.nvim'
@@ -54,61 +52,68 @@ return packer.startup(function(use)
   --use 'Domeee/mosel.nvim'
   use 'comfysage/evergarden'
 
-  -- Dashboard
-  --use 'glepnir/dashboard-nvim'
-  --use 'mhinz/vim-startify'
-  use {
-   "goolord/alpha-nvim",
-   config = function()
-      require("plugins.alpha").setup()
-   end,
-  }
 
-  -- NERDTree Area
-  --use 'preservim/nerdtree'			-- nerdtree - file system explorer
-  --use 'ryanoasis/vim-devicons' 			-- Vim devicons - Icons to nerdtree
+  use { "goolord/alpha-nvim", config = function() require("plugins.utils.alpha").setup() end, } -- Dashboard
   use 'preservim/nerdcommenter'                 -- Commenter
-  --use 'tiagofumo/vim-nerdtree-syntax-highlight' -- Colors to NERDTree
-  --use 'Xuyuanp/nerdtree-git-plugin' 		-- Support to GIT into NERDTree
-
-  -- chadtree Directory
-  use {'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps'}
+  use 'ryanoasis/vim-devicons' -- Vim devicons
+  use {'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps'} -- chadtree Directory
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'} -- customize a buffer section
 
   -- Lualine is a modify below line
   use {
    'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  --use 'vim-airline/vim-airline'
-  --use 'vim-airline/vim-airline-themes'
 
-  -- customize a buffer section
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-
-  -- Searching section
-  use 'junegunn/fzf'
-  use 'junegunn/fzf.vim' --command-line fuzzy finder | serve para fazer uma busca por arquivos no diretório
-
-  -- Formatting || highlight || LSP
-  use {'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'}
-  use 'dense-analysis/ale'
-  use 'sheerun/vim-polyglot'
-
-  -- Color parentheses
-  --use 'luochen1990/rainbow'
-
-  -- Tests
   use 'vim-test/vim-test'
-
-  -- Snippets
-  use 'SirVer/ultisnips' -- integration snippets
   use 'honza/vim-snippets' -- snippets for differents languages
 
+   --LSP config
+  use 'neovim/nvim-lspconfig'
   -- Elixir
+  use {"elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" }}
   use 'elixir-editors/vim-elixir'
+  -- Rust
+  use 'simrat39/rust-tools.nvim'
 
-  -- C#
-  --use 'OmniSharp/omnisharp-vim'
+  -- JS
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
+
+  -- Completion
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+   -- Completion framework:
+  use 'hrsh7th/nvim-cmp' -- autocompletion plugin like a COC
+   -- LSP completion source:
+  use 'hrsh7th/cmp-nvim-lsp' -- the integration of nvim-cmp with neovim's LSP
+   -- Useful completion sources:
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'SirVer/ultisnips'
+  use'quangnguyen30192/cmp-nvim-ultisnips'
+  -- Formater
+  use 'dense-analysis/ale'
+
+  -- Snips
+  -- For vsnip users.
+  --use 'hrsh7th/cmp-vsnip'
+  --use 'hrsh7th/vim-vsnip'
+
+  -- For luasnip users.
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+
+  -- For ultisnips users.
+  use 'SirVer/ultisnips'
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
+
+  -- For snippy users.
+  --use 'dcampos/nvim-snippy'
+  --use 'dcampos/cmp-snippy'
 
   -- Search and replace in project
   use 'nvim-lua/plenary.nvim'
@@ -121,18 +126,15 @@ return packer.startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'
 
   -- Utility
-  use 'tpope/vim-surround' -- delete, change and add such surroundings (parenthesis, breckets, quotes, tags)
-  use 'mhinz/vim-signify'  -- show differences with style
-  use 'tpope/vim-rhubarb'  --If fugitive.vim is the Git, rhubarb.vim is the Hub. Here's the full list of features:
-  use 'junegunn/gv.vim' -- A git commit browser.
   use 'tpope/vim-fugitive' -- Git plugin on vim
+  use 'junegunn/gv.vim' -- A git commit browser.
+  use 'mhinz/vim-signify'  -- show differences with style
   use 'mbbill/undotree' -- visualizes undo history and makes it easier to browse and swtich between
+  use 'nvim-treesitter/nvim-treesitter'
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- gitblame on lualine
-  use 'f-person/git-blame.nvim'
-
-  -- Conceal Vim
-  --use 'khzaw/vim-conceal'
+  --use 'f-person/git-blame.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
