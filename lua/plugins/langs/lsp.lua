@@ -1,18 +1,3 @@
--- ANOTHER MAPPING WAY
---local on_attach = function(client, bufnr)
-  --local bufopts = { noremap = true, silent = true, buffer = bufnr }
-
-  --vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  --vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  --vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  --vim.keymap.set('n', 'lr', vim.lsp.buf.rename, bufopts)
-  --vim.keymap.set('n', '<space>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
-
-  --if client.supports_method("textDocument/formatting") then
-    --vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    --vim.cmd("autocmd BufWritePre lua vim.lsp.buf.format()")
-  --end
---end
 -----------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------ SETUP Keybinds to LSP ------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
@@ -60,6 +45,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
   end
 })
+
 -----------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------ SETUP LSP Configs ----------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
@@ -81,48 +67,31 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
+local on_attach = function(client, bufnr)
+  print('LSP started for ' .. client.name)
+end
+
 -- LSP Diagnostics Options Setup (ELIXIR)
-lspconfig.elixirls.setup{
+lspconfig.elixirls.setup({
     cmd = { "/Users/rafaelhs/.elixir-ls/release/language_server.sh"},
     capabilities = capabilities,
     flags = {
-      debounce_text_changes = 150,
+      debounce_text_changes = 300,
     },
-    elixirLS = {
-      dialyzerEnabled = true,
-      fetchDeps = false,
-      enableTestLenses = false,
-      suggestSpecs = true,
-    };
 
-}
-
--- LSP Diagnostics Options Setup (ELIXIR)
---local elixir = require("elixir")
---local elixirls = require("elixir.elixirls")
-
---elixir.setup {
-  --elixirls = {
-    --cmd = "/Users/rafaelhs/.elixir-ls/release/language_server.sh",
-    ---- default settings, use the `settings` function to override settings
-    --settings = elixirls.settings {
-      --dialyzerEnabled = true,
-      --fetchDeps = false,
-      --enableTestLenses = false,
-      --suggestSpecs = false,
-    --},
-    ----on_attach = on_attach,
-    ----on_attach = function(client, bufnr)
-    ----vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
-    ----vim.keymap.set("n", "<space>tp", ":ElixirToPipe<cr>", { buffer = true, noremap = true })
-    ----vim.keymap.set("v", "<space>em", ":ElixirExpandMacro<cr>", { buffer = true, noremap = true })
-    ----end
-  --}
---}
+  on_attach = on_attach,
+    settings = {
+      elixirLS = {
+        dialyzerEnabled = true,
+        fetchDeps = true,
+        enableTestLenses = true,
+        suggestSpecs = true,
+      },
+    },
+})
 
 -- LSP Diagnostics Options Setup (ERLANG)
 require 'lspconfig'.erlangls.setup{}
-
 
 -- LSP global config
 local sign = function(opts)
@@ -142,7 +111,7 @@ vim.diagnostic.config({
   virtual_text = false,
   signs = true,
   update_in_insert = true,
-  underline = true,
+  underline = false,
   severity_sort = false,
   float = {
     border = 'rounded',

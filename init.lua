@@ -27,6 +27,7 @@ require('plugins.langs.ale')
 require('plugins.langs.treesitter')
 require('plugins.langs.spectre')
 require('plugins.langs.ultisnips')
+require('plugins.langs.luasnip')
 require('plugins.langs.vim_test')
 
 -- LSP Config

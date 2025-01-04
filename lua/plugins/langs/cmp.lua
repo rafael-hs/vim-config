@@ -29,23 +29,23 @@ cmp.setup({
   -- Enable LSP snippets
   snippet = {
     expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      --vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
        --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      --require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
       --vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
     end,
   },
   sources = {
-    { name = 'nvim_lsp', priority = 4, keyword_length = 1},     -- from language server
-    { name = 'ultisnips' , priority =  3, keyword_length = 1 }, -- For ultisnips users.
-    { name = 'path', priority = 2, keyword_length = 3 },        -- file paths
-    { name = 'buffer', priority = 1, keyword_lenght = 3 },      -- source current buffer
+    { name = 'nvim_lsp'},     -- from language server
+    { name = 'luasnip' }, -- For luasnip users.
+    --{ name = 'vsnip', priority = 3, keyword_length = 1 },                         -- nvim-cmp source for vim-vsnip
+    --{ name = 'ultisnips' , priority =  3, keyword_length = 1 }, -- For ultisnips users.
+    { name = 'path' },        -- file paths
+    { name = 'buffer' },      -- source current buffer
     { name = 'nvim_lsp_signature_help'},                        -- display function signatures with current parameter emphasized
     { name = 'nvim_lua' },                                      -- complete neovim's Lua runtime API such vim.lsp.*
     { name = 'calc'},                                           -- source for math calculation
-    --{ name = 'vsnip', priority = 3 },                         -- nvim-cmp source for vim-vsnip
-    -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'snippy' }, -- For snippy users.
   },
   mapping = cmp.mapping.preset.insert({

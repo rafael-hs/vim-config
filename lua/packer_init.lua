@@ -103,17 +103,19 @@ return packer.startup(function(use)
   --use 'hrsh7th/cmp-vsnip'
   --use 'hrsh7th/vim-vsnip'
 
+  -- For snippy users.
+  --use 'dcampos/nvim-snippy'
+  --use 'dcampos/cmp-snippy'
+
   -- For luasnip users.
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
+  use { 'rafamadriz/friendly-snippets' }
 
   -- For ultisnips users.
   use 'SirVer/ultisnips'
   use 'quangnguyen30192/cmp-nvim-ultisnips'
 
-  -- For snippy users.
-  --use 'dcampos/nvim-snippy'
-  --use 'dcampos/cmp-snippy'
 
   -- Search and replace in project
   use 'nvim-lua/plenary.nvim'
@@ -134,7 +136,7 @@ return packer.startup(function(use)
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- gitblame on lualine
-  --use 'f-person/git-blame.nvim'
+  use 'f-person/git-blame.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
