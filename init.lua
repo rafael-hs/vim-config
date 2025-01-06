@@ -21,6 +21,7 @@ require('plugins.utils.undotree')
 require('plugins.utils.vim_fugitive')
 require('plugins.utils.vim_signify')
 require('plugins.utils.vim_telescope')
+require('plugins.utils.devicons')
 
 -- Programming Languages
 require('plugins.langs.ale')

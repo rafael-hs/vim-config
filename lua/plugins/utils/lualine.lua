@@ -61,7 +61,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'catppuccin'
+    theme = 'nord'
   },
   sections = {
     lualine_a = {'mode'},
