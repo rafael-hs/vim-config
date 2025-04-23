@@ -57,8 +57,6 @@ return packer.startup(function(use)
 
   use { "goolord/alpha-nvim", config = function() require("plugins.utils.alpha").setup() end, } -- Dashboard
   use 'preservim/nerdcommenter'                 -- Commenter
-  --use 'ryanoasis/vim-devicons' -- Vim devicons
-  --use 'kyazdani42/nvim-web-devicons'
   use {'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps'} -- chadtree Directory
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'} -- customize a buffer section
 
