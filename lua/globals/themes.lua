@@ -114,23 +114,38 @@ vim.opt.background = 'dark'
 --]]
 
   -- Evergarden config
---require 'evergarden'.setup {
-  --transparent_background = false,
-  --contrast_dark = 'hard', -- 'hard'|'medium'|'soft'
-  --override_terminal = true,
-  --style = {
-    --tabline = { reverse = true, color = 'green' },
-    --search = { reverse = false, inc_reverse = true },
-    --types = { italic = true },
-    --keyword = { italic = true },
-    --comment = { italic = false },
-  --},
-  --overrides = { }, -- add custom overrides
---}
+require 'evergarden'.setup {
+  theme = {
+    variant = 'winter', -- 'winter'|'fall'|'spring'|'summer'
+    accent = 'green',
+  },
+  editor = {
+    transparent_background = false,
+    override_terminal = true,
+    sign = { color = 'none' },
+    float = {
+      color = 'mantle',
+      invert_border = false,
+    },
+    completion = {
+      color = 'surface0',
+    },
+  },
+  style = {
+    tabline = { 'reverse' },
+    search = { 'italic', 'reverse' },
+    incsearch = { 'italic', 'reverse' },
+    types = { 'italic' },
+    keyword = { 'italic' },
+    comment = { 'italic' },
+  },
+  overrides = {},
+  color_overrides = {},
+}
 
---vim.cmd[[
-    --colorscheme evergarden
---]]
+vim.cmd[[
+    colorscheme evergarden
+]]
 
 -- Everforest config
 --vim.cmd[[
@@ -186,11 +201,11 @@ vim.opt.background = 'dark'
  --]]
 
 
-require("neopywal").setup({
-        use_palette = "nord",
-})
+--require("neopywal").setup({
+        --use_palette = "nord",
+--})
 
--- Neopywal
-vim.cmd[[
-colorscheme neopywal-dark
-]]
+---- Neopywal
+--vim.cmd[[
+--colorscheme neopywal-dark
+--]]

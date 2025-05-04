@@ -93,6 +93,14 @@ lspconfig.elixirls.setup({
 -- LSP Diagnostics Options Setup (ERLANG)
 require 'lspconfig'.erlangls.setup{}
 
+-- LSP Golang config
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls"},
+  filetypes = {"go", "gomod", "gowork", "gotmpl"},
+}
+
 -- LSP global config
 local sign = function(opts)
   vim.fn.sign_define(opts.name, {

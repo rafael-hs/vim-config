@@ -50,9 +50,10 @@ return packer.startup(function(use)
   --use 'aswathkk/DarkScene.vim'
   --use 'crispybaccoon/dawn.vim'
   --use 'Domeee/mosel.nvim'
-  --use 'comfysage/evergarden'
+  use 'comfysage/evergarden'
   --use 'sts10/vim-pink-moon'
   use { "RedsXDD/neopywal.nvim", as = "neopywal" }
+  use 'everviolet/nvim'
 
 
   use { "goolord/alpha-nvim", config = function() require("plugins.utils.alpha").setup() end, } -- Dashboard

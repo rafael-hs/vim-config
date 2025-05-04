@@ -4,6 +4,7 @@ let g:ale_fixers = {
       \ 'javascript': ['eslint'],
       \ 'typescript': ['prettier'],
       \ 'elixir': ['mix_format'],
+      \ 'go': ['gopls'],
       \}
 ]]
 
