@@ -34,24 +34,8 @@ end
 -- Install plugins
 return packer.startup(function(use)
   ---------  THEMES  ---------
-  --use 'folke/tokyonight.nvim'
-  --use 'embark-theme/vim'
-  --use 'AlexvZyl/nordic.nvim'
-  --use "lunarvim/horizon.nvim"
-  --use 'bluz71/vim-moonfly-colors'
-  --use 'bluz71/vim-nightfly-guicolors'
-  --use 'rebelot/kanagawa.nvim'
-  --use 'sainnhe/everforest'
-  --use 'frenzyexists/aquarium-vim'
   use 'catppuccin/nvim'
-  --use 'embark-theme/vim'
-  --use 'AlexvZyl/nordic.nvim'
-  --use 'cseelus/vim-colors-lucid'
-  --use 'aswathkk/DarkScene.vim'
-  --use 'crispybaccoon/dawn.vim'
-  --use 'Domeee/mosel.nvim'
   use 'comfysage/evergarden'
-  --use 'sts10/vim-pink-moon'
   use { "RedsXDD/neopywal.nvim", as = "neopywal" }
   use 'everviolet/nvim'
 
@@ -70,11 +54,13 @@ return packer.startup(function(use)
   use 'vim-test/vim-test'
   use 'honza/vim-snippets' -- snippets for differents languages
 
-   --LSP config
+  --LSP config
   use 'neovim/nvim-lspconfig'
+
   -- Elixir
   use {"elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" }}
   use 'elixir-editors/vim-elixir'
+
   -- Rust
   use 'simrat39/rust-tools.nvim'
 
@@ -85,11 +71,11 @@ return packer.startup(function(use)
   -- Completion
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-   -- Completion framework:
+  -- Completion framework:
   use 'hrsh7th/nvim-cmp' -- autocompletion plugin like a COC
-   -- LSP completion source:
+  -- LSP completion source:
   use 'hrsh7th/cmp-nvim-lsp' -- the integration of nvim-cmp with neovim's LSP
-   -- Useful completion sources:
+  -- Useful completion sources:
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
@@ -97,6 +83,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'SirVer/ultisnips'
   use'quangnguyen30192/cmp-nvim-ultisnips'
+
   -- Formater
   use 'dense-analysis/ale'
 
