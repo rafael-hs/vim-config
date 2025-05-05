@@ -15,7 +15,7 @@ set.cursorline = true -- highlight current line
 set.confirm = true -- asking if u wish to save the current file
 set.title = true -- show the tittle
 set.showcmd = true -- show cmd below
-set.cmdheight = 3 -- height cmd below
+set.cmdheight = 2 -- height cmd below
 
 -- Mouse --
 set.mouse = 'a' -- enable mouse visual mode

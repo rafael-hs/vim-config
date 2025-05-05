@@ -36,5 +36,9 @@ require('plugins.langs.lsp')
 require('plugins.langs.cmp')
 require('plugins.langs.mason')
 
+-- DAP's Config
+require('plugins.dap.nvim_dap_go')
+
+
 -- Packer import
 require('packer_init')

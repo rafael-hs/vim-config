@@ -87,6 +87,11 @@ return packer.startup(function(use)
   -- Formater
   use 'dense-analysis/ale'
 
+  -- Debbuger
+  use 'mfussenegger/nvim-dap'
+  -- Golang
+  use 'leoluz/nvim-dap-go'
+
   -- Snips
   -- For vsnip users.
   --use 'hrsh7th/cmp-vsnip'
