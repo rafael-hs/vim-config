@@ -92,6 +92,9 @@ return packer.startup(function(use)
   -- Golang
   use 'leoluz/nvim-dap-go'
 
+  -- AI
+  use 'github/copilot.vim'
+
   -- Snips
   -- For vsnip users.
   --use 'hrsh7th/cmp-vsnip'
